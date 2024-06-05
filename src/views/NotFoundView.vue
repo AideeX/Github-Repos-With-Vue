@@ -55,7 +55,7 @@ const lostImage = 'error404.png';
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 450px) and (max-width: 768px) {
   .error-container {
     padding: 1.5rem;
   }

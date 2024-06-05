@@ -164,7 +164,7 @@ onMounted(() => fetchRepos(currentPage.value))
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 450px) and (max-width: 768px) {
   .repos-container {
     padding: 1.5rem;
   }

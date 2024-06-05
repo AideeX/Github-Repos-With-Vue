@@ -29,7 +29,16 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 450px) and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-link {
+    margin: 0.5rem 0;
+  }
+}
+@media screen and (max-width: 450px) {
   .footer {
     flex-direction: column;
   }

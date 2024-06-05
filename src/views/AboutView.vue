@@ -1,9 +1,13 @@
 <script setup>
-
 const profilePic = '/profile-image.jpg';
 </script>
 
 <template>
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><router-link to="/">Home</router-link></li>
+    </ul>
+  </nav>
   <main class="about">
     <img :src="profilePic" alt="Idaresit's profile picture" class="profile-pic" />
     <div class="content">
@@ -20,6 +24,41 @@ const profilePic = '/profile-image.jpg';
 </template>
 
 <style scoped>
+.nav-bar {
+  background-color: var(--background-color-light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  color: var(--button-text-color);
+  background-color: var(--button-bg-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--button-border-radius);
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  background-color: #004085;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -28,11 +67,9 @@ const profilePic = '/profile-image.jpg';
   background-color: var(--background-color-light);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin: 1rem;
+  margin: 1rem auto;
   transition: background-color 0.3s ease;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .profile-pic {
@@ -63,6 +100,19 @@ p {
 
 /* Media Queries */
 @media screen and (min-width: 450px) and (max-width: 768px) {
+  .nav-bar {
+    padding: 0.75rem;
+  }
+
+  .nav-links li {
+    margin: 0 0.5rem;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
   .about {
     padding: 1.5rem;
   }
@@ -78,6 +128,24 @@ p {
 }
 
 @media screen and (max-width: 450px) {
+  .nav-bar {
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .nav-links a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
   .about {
     padding: 1rem;
   }
