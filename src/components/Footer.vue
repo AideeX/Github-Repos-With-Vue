@@ -1,7 +1,11 @@
+<script setup>
+import  GamesView  from '@/views/GamesView.vue'
+</script>
+
 <template>
   <footer class="footer bg-background dark:bg-charcoal text-charcoal dark:text-gray-100 py-4 flex justify-center space-x-4 shadow-md dark:shadow-purple-dark mt-8">
-    <router-link to="/any-nonexistent-path" class="footer-link text-purple dark:text-purple-light hover:text-purple-dark dark:hover:text-purple-hover">404 Not Found</router-link>
-    <router-link to="/error" class="footer-link text-purple dark:text-purple-light hover:text-purple-dark dark:hover:text-purple-hover">Error Boundary</router-link>
+    <p>&copy; 2024 Idaresit's Repositories</p>
+    <router-link to="/games" class="text-purple dark:text-purple-light hover:text-purple-dark dark:hover:text-purple-hover">Games</router-link>
   </footer>
 </template>
 

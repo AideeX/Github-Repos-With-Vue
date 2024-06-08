@@ -1,26 +1,27 @@
 <script setup>
 import { ref, onErrorCaptured } from 'vue'
-import Counter from './Counter.vue'
+
 
 const hasError = ref(false)
 const errorImage = '/bug-fixing.svg'
+const errorMessage = ref('')
 
 onErrorCaptured((err, instance, info) => {
-  if (err.message === 'Count reached 5') {
+  console.log('Captured error:', err, instance, info)
     hasError.value = true
-  }
-  console.error(err, instance, info)
-  return false
+    errorMessage.value = err.message
+    return false
 })
 </script>
 <template>
   <div v-if="hasError" class="error-container">
     <h1>OOPS! An error occurred.</h1>
+    <p>{{ errorMessage }}</p>
     <img :src="errorImage" alt="Error Image" class="error-image">
     <router-link to="/" class="error-link">HOME</router-link>
   </div>
   <div v-else>
-    <Counter />
+    <slot></slot>
   </div>
 </template>
 
