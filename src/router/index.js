@@ -19,11 +19,11 @@ const router = createRouter({
       name: 'about',
       component: () => import('../views/AboutView.vue')
     },
-    {
-      path: '/games',
-      name: 'GamesView',
-      component: () => import('../views/GamesView.vue')
-    },
+    // {
+    //   path: '/games',
+    //   name: 'GamesView',
+    //   component: () => import('../views/GamesView.vue')
+    // },
     {
       path: '/:catchAll(.*)',
       name: 'NotFound',
