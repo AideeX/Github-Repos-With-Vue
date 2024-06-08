@@ -20,47 +20,47 @@ onMounted(fetchRepo)
 </script>
 
 <template>
-  <section v-if="repo" class="repo-container">
-    <h1>{{ repo.name }}</h1>
-    <table class="repo-table">
-        <tr>
-          <th>Stars</th><td>{{ repo.stargazers_count }}</td>
-        </tr>
-        <tr>
-          <th>Forks</th><td>{{ repo.forks_count }}</td>
-        </tr>
-        <tr>
-          <th>Open Issues</th><td>{{ repo.open_issues_count }}</td>
-        </tr>
-        <tr>
-          <th>Watchers</th><td>{{ repo.watchers_count }}</td>
-        </tr>
-        <tr>
-          <th>Repo Size</th><td>{{ repo.size }}</td>
-        </tr>
-        <tr>
-          <th>Default Branch</th><td>{{ repo.default_branch }}</td>
-        </tr>
-        <tr>
-          <th>Language</th><td>{{ repo.language }}</td>
-        </tr>
-        <tr>
-          <th>Created at</th><td>{{ new Date(repo.created_at).toLocaleDateString() }}</td>
-        </tr>
-        <tr>
-          <th>Last updated</th><td>{{ new Date(repo.updated_at).toLocaleDateString() }}</td>
-        </tr>
-      </table>
-      <div class="buttons">
-        <router-link to="/">
-          <button class="button">Go Home</button>
-        </router-link>
-        <a :href="repo.html_url" target="_blank" rel="noopener noreferrer" class="button">Explore More</a>
-      </div>
+  <section v-if="repo" class="repo-container bg-background dark:bg-charcoal text-charcoal dark:text-gray-100 p-6 rounded-lg shadow-lg dark:shadow-purple-dark max-w-3xl mx-auto mt-6 flex flex-col items-center">
+    <h1 class="text-3xl font-bold mb-6 text-center">{{ repo.name }}</h1>
+    <table class="repo-table w-full mb-6">
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Stars</th><td class="py-2">{{ repo.stargazers_count }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Forks</th><td class="py-2">{{ repo.forks_count }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Open Issues</th><td class="py-2">{{ repo.open_issues_count }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Watchers</th><td class="py-2">{{ repo.watchers_count }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Repo Size</th><td class="py-2">{{ repo.size }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Default Branch</th><td class="py-2">{{ repo.default_branch }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Language</th><td class="py-2">{{ repo.language }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Created at</th><td class="py-2">{{ new Date(repo.created_at).toLocaleDateString() }}</td>
+      </tr>
+      <tr class="border-b border-gray-300 dark:border-gray-600">
+        <th class="text-left py-2">Last updated</th><td class="py-2">{{ new Date(repo.updated_at).toLocaleDateString() }}</td>
+      </tr>
+    </table>
+    <div class="buttons flex space-x-4">
+      <router-link to="/">
+        <button class="bg-purple text-white py-2 px-4 rounded shadow-lg transition-colors duration-300 hover:bg-purple-dark">Go Home</button>
+      </router-link>
+      <a :href="repo.html_url" target="_blank" rel="noopener noreferrer" class="bg-purple text-white py-2 px-4 rounded shadow-lg transition-colors duration-300 hover:bg-purple-dark">Explore More</a>
+    </div>
   </section>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .repo-container {
   padding: 2rem;
   background-color: var(--background-color-light);
@@ -162,4 +162,4 @@ onMounted(fetchRepo)
     font-size: 0.8rem;
   }
 }
-</style>
+</style> -->

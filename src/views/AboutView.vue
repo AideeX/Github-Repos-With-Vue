@@ -3,15 +3,19 @@ const profilePic = '/profile-image.jpg';
 </script>
 
 <template>
-  <nav class="nav-bar">
-    <ul class="nav-links">
-      <li><router-link to="/">Home</router-link></li>
+  <nav class="nav-bar bg-background dark:bg-charcoal p-4 shadow-md dark:shadow-purple-dark">
+    <ul class="nav-links flex space-x-4">
+      <li>
+        <router-link to="/" class="home-button bg-purple text-white py-2 px-4 rounded shadow-lg transition-colors duration-300 hover:bg-purple-dark">
+          Home
+        </router-link>
+      </li>
     </ul>
   </nav>
-  <main class="about">
-    <img :src="profilePic" alt="Idaresit's profile picture" class="profile-pic" />
-    <div class="content">
-      <h1>About Me</h1>
+  <main class="about bg-background dark:bg-charcoal p-6 rounded-lg shadow-md dark:shadow-purple-dark max-w-screen-md mx-auto mt-6">
+    <img :src="profilePic" alt="Idaresit's profile picture" class="profile-pic w-32 h-32 rounded-full mx-auto mb-4">
+    <div class="content text-charcoal dark:text-gray-100 space-y-4">
+      <h1 class="text-3xl font-bold text-center">About Me</h1>
       <p>As a committed professional, my career journey is marked by variety and depth.</p>
       <p>I am a devoted spouse and mother of two, and I have adeptly navigated the demands of family life alongside my academic and professional endeavors. I possess a Bachelor of Arts in English and a Master of Business Administration with a focus on Management.</p>
       <p>My fascination with technology was ignited during my time in the university but it was only recently that I chose to fully embrace this sector.</p>
@@ -23,7 +27,7 @@ const profilePic = '/profile-image.jpg';
   </main>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .nav-bar {
   background-color: var(--background-color-light);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -160,4 +164,4 @@ p {
     max-width: 100%;
   }
 }
-</style>
+</style> -->

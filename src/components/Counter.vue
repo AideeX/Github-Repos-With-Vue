@@ -1,13 +1,14 @@
 <script setup>
-import { ref, watchEffect } from 'vue'
 import { useCounterStore } from '../stores/counter.js'
 
 const counter = useCounterStore()
 
 const incrementAndCheck = () => {
-  counter.increment()
-  if (counter.count === 5) {
-    throw new Error('Count reached 5')
+  try{
+    counter.increment()
+  } catch (error) {
+    console.error(error)
+    throw error
   }
 }
 </script>

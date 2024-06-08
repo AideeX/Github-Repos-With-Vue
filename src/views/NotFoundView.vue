@@ -5,16 +5,20 @@ const lostImage = 'error404.png';
 </script>
 
 <template>
-  <div class="error-container">
-    <img :src="lostImage" alt="Odunlade looking confused..." class="error-image" />
-    <p class="error-message">
-      It may seem as though you have lost your way but who neva loss before? No worries though, this is the road that will lead you 
-      <router-link to="/" class="active-link">Home</router-link>
-    </p>
+  <div class="error-container flex flex-col items-center justify-center min-h-screen bg-background dark:bg-charcoal text-charcoal dark:text-gray-100 p-6 shadow-lg dark:shadow-purple-dark rounded-lg">
+    <img :src="lostImage" alt="Odunlade looking confused..." class="error-image w-80 h-80 mb-6 rounded shadow-lg">
+    <p class="error-message text-center text-lg px-4">
+      It may seem as though you have lost your way but who neva loss before? <br/>
+      No worries though, this is the road that will lead you 
+      </p>
+      <router-link to="/" class="home-button bg-purple text-white py-2 px-4 rounded shadow-lg transition-colors duration-300 hover:bg-purple-dark font-bold no-underline mt-2">
+        Home
+      </router-link>  
+
   </div>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .error-container {
   display: flex;
   flex-direction: column;
@@ -74,4 +78,4 @@ const lostImage = 'error404.png';
     font-size: 0.9rem;
   }
 }
-</style>
+</style> -->

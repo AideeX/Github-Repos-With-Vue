@@ -1,11 +1,11 @@
 <template>
-  <footer class="footer">
-    <router-link to="/any-nonexistent-path" class="footer-link">404 Not Found</router-link>
-    <router-link to="/error" class="footer-link">Error Boundary</router-link>
+  <footer class="footer bg-background dark:bg-charcoal text-charcoal dark:text-gray-100 py-4 flex justify-center space-x-4 shadow-md dark:shadow-purple-dark mt-8">
+    <router-link to="/any-nonexistent-path" class="footer-link text-purple dark:text-purple-light hover:text-purple-dark dark:hover:text-purple-hover">404 Not Found</router-link>
+    <router-link to="/error" class="footer-link text-purple dark:text-purple-light hover:text-purple-dark dark:hover:text-purple-hover">Error Boundary</router-link>
   </footer>
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .footer {
   display: flex;
   justify-content: center;
@@ -47,4 +47,4 @@
     margin: 0.5rem 0;
   }
 }
-</style>
+</style> -->

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* CSS Reset */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -23,6 +27,7 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+  font-family: 'Merriweather', serif;
 }
 
 #root, #__next {
@@ -30,7 +35,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 /*My styles*/
 
-:root {
+/* :root {
   ---background-color-light: #f9f9f9;
   --background-color-dark: #191970;
   --button-bg-color: #007bff;
@@ -45,4 +50,4 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(---background-color-light);
-}
+} */

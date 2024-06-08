@@ -1,4 +1,4 @@
-@import './base.css';
+@import './index.css';
 
 #app {
   max-width: 1280px;
@@ -6,4 +6,6 @@
   padding: 2rem;
   font-weight: normal;
   width: 100%;
+  background-color: #f7f7f9;
+  font-family: 'Open Sans', sans-serif;
 }

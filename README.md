@@ -31,4 +31,4 @@ The application has the following features:
 
 ### DESIGN
 
-The application was styled using vanilla CSS. Media Queries were defined for responsiveness to ensure the application is accessible across various devices and screen sizes. Dark mode styles were also included to users' comfort in different environments.
+The appication was styled using tailwindcss.

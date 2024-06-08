@@ -53,27 +53,29 @@ onMounted(() => fetchRepos(currentPage.value))
 </script>
 
 <template>
-  <section class="repos-container">
-    <div class="search-container">
-      <input type="text" v-model="searchTerm" @input="handleSearch" placeholder="Search repositories">
-    </div>
-    <div class="repos-list">
-      <div v-for="(repo, index) in filteredRepos" :key="index" class="repo-card">
-        <router-link :to="`/repo/${repo.name}`">
-          <h2>{{ repo.name }}</h2>
+  <div class="search-bar-container flex items-center bg-background dark:bg-charcoal rounded-lg h-10 px-4 shadow-md dark:shadow-purple-dark max-w-xl m-auto mt-5">
+    <i id="search-icon" class="fas fa-search text-charcoal dark:text-gray-100"></i>
+    <input type="text" v-model="searchTerm" @input="handleSearch" placeholder="Search repositories" class="ml-2 bg-transparent border-none h-full w-full text-xl focus:outline-none text-charcoal dark:text-gray-100 placeholder-gray-600 dark:placeholder-gray-400">
+  </div>
+  <section class="repos-container bg-background dark:bg-charcoal shadow-md dark:shadow-purple-dark rounded-lg mt-6 mx-auto p-6 max-w-screen-xl">
+    <div class="repos-list grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+      <div v-for="(repo, index) in filteredRepos" :key="index" class="repo-card justify-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded shadow-lg dark:shadow-purple-dark flex flex-col items-center text-center h-48">
+        <router-link :to="`/repo/${repo.name}`" class="text-purple dark:text-purple-light hover:text-purple-dark dark:hover:text-purple-hover font-bold no-underline">
+          <h2 class="text-lg font-bold">{{ repo.name }}</h2>
         </router-link>
-        <p>{{ repo.description }}</p>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{{ repo.description }}</p>
       </div>
     </div>
-    <div class="pagination">
-      <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
-      <span>Page {{ currentPage }}</span>
-      <button @click="nextPage" :disabled="!hasMoreFiltered">Next</button>
+    <div class="button-container flex justify-center gap-4 mt-8">
+      <button @click="prevPage" :disabled="currentPage === 1" class="p-2 bg-purple text-white rounded shadow-lg transition-colors duration-300 hover:bg-purple-dark disabled:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-80">Previous</button>
+      <span class="text-gray-800 dark:text-gray-100">Page {{ currentPage }}</span>
+      <button @click="nextPage" :disabled="!hasMoreFiltered" class="p-2 bg-purple text-white rounded shadow-lg transition-colors duration-300 hover:bg-purple-dark disabled:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-80">Next</button>
     </div>
   </section>
+
 </template>
 
-<style scoped>
+<!-- <style scoped>
 .repos-container {
   display: flex;
   flex-direction: column;
@@ -199,4 +201,4 @@ onMounted(() => fetchRepos(currentPage.value))
     font-size: 1rem;
   }
 }
-</style>
+</style> -->
